@@ -111,6 +111,3 @@ This is a real-time ticket management system built with a **Spring Boot** backen
 5. Open a pull request.
 
 ---
-
-## License
-This project is licensed under the MIT License.
