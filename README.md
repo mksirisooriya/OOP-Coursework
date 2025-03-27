@@ -156,5 +156,3 @@ cd OOP-Coursework
     npm install react-toastify
     npm install @nivo/core @nivo/pie
     ```
-
-```
