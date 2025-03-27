@@ -25,7 +25,7 @@ This is a Real-Time Ticket Management System built with a Spring Boot backend, a
 ## Technologies Used
 
 *   **Backend:** Spring Boot, Java
-*   **Frontend:** React.js, Material-UI, Nivo
+*   **Frontend:** React.js
 *   **Database:** MySQL
 *   **CLI:** Java
 
