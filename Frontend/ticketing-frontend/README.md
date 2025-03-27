@@ -1,70 +1,116 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Real-Time Ticket Management System
 
-## Available Scripts
+This is a real-time ticket management system built with a **Spring Boot** backend and a **React.js** frontend. The system allows vendors to release tickets, customers to retrieve tickets, and administrators to monitor system activities in real-time.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Backend
+- Built with **Spring Boot**.
+- Provides RESTful APIs for configuration, system control, and ticket management.
+- Real-time updates via **WebSocket**.
+- Logging functionality to monitor system activities.
+- Uses **JPA** for data persistence.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- Developed with **React.js**.
+- Provides an intuitive user interface for system configuration, control, and monitoring.
+- Displays real-time logs and ticket availability using **WebSocket**.
+- Fully responsive design.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Installation Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+1. Ensure you have **Java 11+** and **Maven** installed.
+2. Clone the repository and navigate to the backend directory.
+3. Run the following commands:
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+   ```
+4. The backend will start on `http://localhost:8080`.
 
-### `npm run build`
+### Frontend
+1. Ensure you have **Node.js** installed.
+2. Navigate to the frontend directory.
+3. Run the following commands:
+   ```bash
+   npm install
+   npm start
+   ```
+4. The frontend will start on `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Configuration
+1. Navigate to the **System Configuration** section on the frontend.
+2. Enter the following fields:
+   - Total Tickets
+   - Ticket Release Rate (in milliseconds)
+   - Customer Retrieval Rate (in milliseconds)
+   - Maximum Ticket Capacity
+3. Save the configuration.
 
-### `npm run eject`
+### Starting the System
+1. Go to the **Control Panel** section.
+2. Click "Start System" to begin ticket operations.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Monitoring
+- View real-time ticket availability in the **Ticket Availability** section.
+- Monitor system logs in the **System Log** section.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Stopping the System
+1. Go to the **Control Panel** section.
+2. Click "Stop System" to halt operations.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## API Endpoints
 
-## Learn More
+### Configuration
+- `POST /api/ticket/configure`: Save system configuration.
+- `GET /api/ticket/status`: Get current system status.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### System Control
+- `POST /api/ticket/start`: Start the ticketing system.
+- `POST /api/ticket/stop`: Stop the ticketing system.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Logs
+- `GET /api/ticket/logs`: Retrieve system logs.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## WebSocket Topics
+- `/topic/logs`: Real-time system logs.
+- `/topic/ticketAvailability`: Real-time ticket availability updates.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Technologies Used
 
-### Making a Progressive Web App
+### Backend
+- **Spring Boot**
+- **Spring WebSocket**
+- **Spring Data JPA**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Frontend
+- **React.js**
+- **SockJS** and **@stomp/stompjs**
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature-name`.
+3. Commit your changes: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature-name`.
+5. Open a pull request.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+This project is licensed under the MIT License.
